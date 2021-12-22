@@ -1,9 +1,9 @@
 import Botao from './Botao';
 
-export default function Menu(props){
+export default function Menu(){
     return(
         <aside className="box">
-            <Botao userName={props.userName} />
+            <Botao/>
         </aside>
     )
 };

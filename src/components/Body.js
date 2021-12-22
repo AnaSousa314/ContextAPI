@@ -1,17 +1,20 @@
 import Botao from './Botao';
+import { UserContext } from '../context/UserContext';
+import { useContext } from 'react';
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default function Body (props){
-    const handleButton = () => {
-        // props.setUserName('Paulo');
-        props.setUserName(prevState=> prevState === 'Ana' ? 'Paulo': 'Ana')
-    }
+
+    const {onToggleUser,userName} = useContext(UserContext);
+
+    // const handleButton = () => {
+    //     // props.setUserName('Paulo');
+    //     props.setUserName(prevState=> prevState === 'Ana' ? 'Paulo': 'Ana')
+    // }
 
     return (
         <article className="box">
-            <Botao userName={props.userName} />
-
-            <button onClick={handleButton}>Trocar para {props.userName}</button>
+            <Botao/>
+            <button onClick={onToggleUser}>Trocar para {userName}</button>
         </article>
     );
 }
