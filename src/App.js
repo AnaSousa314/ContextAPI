@@ -4,19 +4,22 @@ import Header from './components/Header';
 import Menu from './components/Menu';
 import Body from "./components/Body";
 
-import {UserProvider} from './context/UserContext';
+import {UserProvider} from './contexts/UserContext';
+import ThemingContext from './contexts/ThemeContext';
 
 function App() {
   return (
-    <UserProvider>
-      <div className="container">
-        <Header/>
-        <section>
-          <Menu/>
-          <Body/>
-        </section>
-      </div>
-    </UserProvider>
+    <ThemingContext.Provider value="light">
+      {/* <UserProvider> */}
+        <div className="container">
+          <Header/>
+          <section>
+            <Menu/>
+            <Body/>
+          </section>
+        </div>
+      {/* </UserProvider> */}
+    </ThemingContext.Provider>
   );
 }
 

@@ -1,5 +1,5 @@
 import Botao from './Botao';
-import { UserContext } from '../context/UserContext';
+import { UserContext } from '../contexts/UserContext';
 import { useContext } from 'react';
 
 export default function Body (props){
