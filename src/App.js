@@ -9,9 +9,16 @@ import ThemingContext from './contexts/ThemeContext';
 
 function App() {
   return (
-    <ThemingContext.Provider value="light">
+    <ThemingContext.Provider value="dark">
       {/* <UserProvider> */}
         <div className="container">
+        <ThemingContext.Consumer>
+          {value=>(
+            <div>
+              Tema:{value}
+            </div>
+          )}
+        </ThemingContext.Consumer>
           <Header/>
           <section>
             <Menu/>
