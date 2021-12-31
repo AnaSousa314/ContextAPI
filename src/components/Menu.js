@@ -1,14 +1,12 @@
+import { useContext } from "react";
 import Botao from "./Botao";
 import ThemeContext from "../contexts/ThemeContext";
 
 export default function Menu() {
+  const theme = useContext(ThemeContext);
   return (
-    <ThemeContext.Consumer>
-      {(value) => (
-        <aside className={`box theme-${value}`}>
-          <Botao />
-        </aside>
-      )}
-    </ThemeContext.Consumer>
+    <aside className={`box theme-${theme}`}>
+      <Botao />
+    </aside>
   );
 }

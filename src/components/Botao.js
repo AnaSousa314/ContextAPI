@@ -1,20 +1,16 @@
 // import { UserContext } from "../contexts/UserContext"
+import { useContext } from "react";
 import UsersContext from "../contexts/UsersContext";
 import ThemeContext from "../contexts/ThemeContext";
 export default function Botao(props){
   // const {userName} = useContext(UserContext);
   // console.log(userName)
 
+  const theme = useContext(ThemeContext);
+  const user = useContext(UsersContext);
+
   return(
-    <UsersContext.Consumer>
-      {value=>(
-        <ThemeContext.Consumer>
-          {themeValue=>(
-            <button>{value.name} - {themeValue}</button>
-          )}
-        </ThemeContext.Consumer>
-      )}
-    </UsersContext.Consumer>
+    <button>{user.name} - {theme}</button>
   
   )
 };
