@@ -1,15 +1,15 @@
 import Botao from './Botao';
 
-import ThemingContext from '../contexts/ThemeContext';
+import ThemeContext from '../contexts/ThemeContext';
 
 export default function Header(props){
     return(
-      <ThemingContext.Consumer>
+      <ThemeContext.Consumer>
       {value=>(
         <header className={`box theme-${value}`}>
           <Botao/>
         </header>
       )}
-      </ThemingContext.Consumer>
+      </ThemeContext.Consumer>
     )
 };

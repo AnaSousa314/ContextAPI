@@ -1,14 +1,14 @@
 import Botao from "./Botao";
-import ThemingContext from "../contexts/ThemeContext";
+import ThemeContext from "../contexts/ThemeContext";
 
 export default function Menu() {
   return (
-    <ThemingContext.Consumer>
+    <ThemeContext.Consumer>
       {(value) => (
         <aside className={`box theme-${value}`}>
           <Botao />
         </aside>
       )}
-    </ThemingContext.Consumer>
+    </ThemeContext.Consumer>
   );
 }

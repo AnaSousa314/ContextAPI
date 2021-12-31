@@ -4,29 +4,35 @@ import Header from './components/Header';
 import Menu from './components/Menu';
 import Body from "./components/Body";
 
-import {UserProvider} from './contexts/UserContext';
-import ThemingContext from './contexts/ThemeContext';
+// import {UserProvider} from './contexts/UserContext';
+import ThemeContext from './contexts/ThemeContext';
+import UsersContext from './contexts/UsersContext';
+import { useState } from 'react';
 
 function App() {
+  const [userName,setUserName] = useState('Ana');
+  const [userEmail,setUserEmail] = useState('ana@email.com');
   return (
-    <ThemingContext.Provider value="dark">
+    <ThemeContext.Provider value="dark">
       {/* <UserProvider> */}
+      <UsersContext.Provider value={{name: userName,email: userEmail}}>
         <div className="container">
-        <ThemingContext.Consumer>
+        <ThemeContext.Consumer>
           {value=>(
             <div>
               Tema:{value}
             </div>
           )}
-        </ThemingContext.Consumer>
+        </ThemeContext.Consumer>
           <Header/>
           <section>
             <Menu/>
-            <Body/>
+            <Body setUserName={setUserName} userName={userName}/>
           </section>
         </div>
+      </UsersContext.Provider>
       {/* </UserProvider> */}
-    </ThemingContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 

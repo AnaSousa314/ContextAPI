@@ -1,5 +1,5 @@
-import React, {createContext} from 'react';
+import {createContext} from 'react';
 
-const ThemingContext = createContext();
+const ThemeContext = createContext();
 
-export default ThemingContext;
+export default ThemeContext;
